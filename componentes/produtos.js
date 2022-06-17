@@ -1,3 +1,5 @@
+import Produto from './../componentes/produto.js'
+
 export default {
     props: {
       produtos: {
@@ -5,6 +7,7 @@ export default {
         required: true,
       },
     },
+    components: { Produto },
     emits: [
       'selecionar-produto'
     ],
@@ -14,13 +17,11 @@ export default {
       }
     },
     template: `
-      <div>Produtos</div>
-      <ul>
-        <li v-for="produto in produtos"
-            @click="selecionarProduto(produto)"
-        >
-          {{ produto.nome }}
-        </li>
-      </ul>
+      <div id="listaDeProdutos" class="d-flex justify-content-around p-5">
+        <Produto v-for="produto in produtos"
+          :produto="produto"
+          @selecionar-produto="selecionarProduto(produto)"
+        />
+      </div>
     `
 }

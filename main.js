@@ -8,8 +8,8 @@ export default {
       return {
         pedido: new Pedido(),
         produtos: [
-          new Produto('Moletom', 149.90),
-          new Produto('Jaqueta', 199.90),
+          new Produto('Moletom', 149.90, 'moletom.webp'),
+          new Produto('Jaqueta', 199.90, 'jaqueta.jpg'),
         ]
       }
     },
